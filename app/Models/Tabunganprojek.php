@@ -9,7 +9,7 @@ class Tabunganprojek extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nis', 'nama','password',
+        'nis', 'nama', 'rombel','rayon', 'tahun_ajaran','jenis_kelamin','jumlah_nominal_tabungan'
         ];
-}
+        }
 
