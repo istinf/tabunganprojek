@@ -1,4 +1,14 @@
 <?php
+Use App\Http\Controllers\UserController;
+
+Use App\Http\Controllers\PemakaianController;
+
+Use App\Http\Controllers\SiswaController;
+
+Use App\Http\Controllers\TabunganController;
+
+Use App\Http\Controllers\TabunganprojekController;
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +25,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+    Route::resource('tabunganprojeks', TabunganprojekController::class);
+
 });
 
 Auth::routes();
@@ -22,3 +34,14 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('v_home');
 
 Route::get('/home', 'HomeController@index')->name('v_home');
+
+Route::resource('tabungans', TabunganController::class);
+
+Route::resource('siswas', SiswaController::class);
+
+Route::resource('pemakaians', PemakaianController::class);
+
+Route::resource('users', UserController::class);
+
+
+
